@@ -118,13 +118,18 @@ def loginCSU():
      
     CSU_login_username = DRIVER.find_element(By.ID,"userNameInput")
     CSU_login_password = DRIVER.find_element(By.ID,"passwordInput")
-
-    CSU_login_username.send_keys(USERNAME+"@student.clayton.edu")
-    CSU_login_password.send_keys(PASSWORD)
+    try:
+     CSU_login_username.send_keys(USERNAME+"@student.clayton.edu")
+    except(TypeError):
+      print("Invaild Username input")
+    try:
+      CSU_login_password.send_keys(PASSWORD)
+    except(TypeError):
+      print("Invaild Pasword input")
+   
 
     submit_button = DRIVER.find_element(By.ID,"submitButton")
     submit_button.click()
-
     staff = WAIT.until(EC.element_to_be_clickable((By.XPATH,
                                                "//*[@id='DuoAdfsAdapter']")))
     staff.click()
