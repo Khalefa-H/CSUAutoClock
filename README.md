@@ -16,7 +16,7 @@ options:
                         directly into the code)
   -hrs HOURS, --hours HOURS
                         Hours to clock if not set the Hours will be set to 4
- Some issues: 
+ <br/>Some issues: 
 
 This version will not tell you if you got the wrong login if it stops outputting during login this is most likely why
 
