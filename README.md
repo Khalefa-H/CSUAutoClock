@@ -4,8 +4,8 @@
 <h1>SETUP<h1/><br/>
 <p>Windows<p><br/>
 1.Install Python3 w/ pip <li/>
-2.Install requirements with "pip install -r requirements.txt"
-3.Run with arguments  example "python3 .\clocker.py" or create a powershell .ps1 file 
+2.Install requirements with "pip install -r requirements.txt"<li/>
+<li>3.Run with arguments  example "python3 .\clocker.py" or create a powershell .ps1 file <li/>
 
 
 usage: clocker.py [-h] [-u USERNAME] [-p PROMPT] [-hrs HOURS]
