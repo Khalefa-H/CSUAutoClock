@@ -12,14 +12,14 @@ It logs in then starts the Duo push for aproval (It tries twice if you it times 
 
 #CSUautoclockin
 
-options:
-  -h, --help            show this help message and exit
-  -u USERNAME, --username USERNAME
+options:<br/>
+ <br/> -h, --help            show this help message and exit
+ <br/> -u USERNAME, --username USERNAME
                         CSU Username (everything before the @)
-  -p PROMPT, --prompt PROMPT
+<br/>  -p PROMPT, --prompt PROMPT
                         Disable Password prompt for automation (add password
                         directly into the code)
-  -hrs HOURS, --hours HOURS
+<br/>  -hrs HOURS, --hours HOURS
                         Hours to clock if not set the Hours will be set to 4
  <br/> <br/>Some issues: 
 
