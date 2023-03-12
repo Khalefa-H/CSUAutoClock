@@ -1,7 +1,7 @@
 # CSUAutoClock
  A Simple Script to Clock OneUSG User to Clock user in and out using pyhton and selium
 
-<h1>SETUP<h1/><br/>
+<h1>SETUP</h1><br/>
 <p>Windows<p/><br/>
 <li>1.Install Python3 w/ pip
 <li>2.Install requirements with "pip install -r requirements.txt"
@@ -10,7 +10,7 @@
 
 <h2>usage: clocker.py [-h] [-u USERNAME] [-p PROMPT] [-hrs HOURS]<h2/>
 
-CSUautoclockin
+#CSUautoclockin
 
 options:
   -h, --help            show this help message and exit
