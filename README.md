@@ -5,10 +5,10 @@
 <p>Windows<p/><br/>
 <li>1.Install Python3 w/ pip
 <li>2.Install requirements with "pip install -r requirements.txt"
-<li>3.Run with arguments  example "python3 .\clocker.py" or create a powershell .ps1 file <li/>
+<li>3.Run with arguments  example "python3 .\clocker.py" or create a powershell .ps1 file
 
 
-usage: clocker.py [-h] [-u USERNAME] [-p PROMPT] [-hrs HOURS]
+<h2>usage: clocker.py [-h] [-u USERNAME] [-p PROMPT] [-hrs HOURS]<h2/>
 
 CSUautoclockin
 
