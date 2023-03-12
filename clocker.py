@@ -7,7 +7,6 @@ import sys
 import time
 import os
 import argparse
-import configparser
 from getpass import getpass 
 
 import logging
@@ -23,7 +22,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 #---------------------------------------------------------------#
-#DEBUG FLAG
+#DEBUG FLAG(Turns on GUI)
 DEBUG_MODE = False
 #import chromedriver_autoinstaller
 
@@ -31,15 +30,10 @@ DEBUG_MODE = False
 DEFAULT_HOURS = 4
 
 #parsers
- #ini
-config = configparser.ConfigParser()
-
-config.read('clocker.ini')
-
   #--arguments
 parser = argparse.ArgumentParser(description='CSUautoclockin')
-parser.add_argument('-u', '--username', help="CSU Username", required=False ,default=config['User']['Username'])
-parser.add_argument('-p', '--prompt', help="Turn on Password from ini file set to 'y' to enable   ", required=False)
+parser.add_argument('-u', '--username', help="CSU Username", required=False )
+parser.add_argument('-p', '--prompt', help="Disable Password prompt for automation (add password directly into the code)  ", required=False)
 parser.add_argument('-hrs', '--hours', type=float, help="Hours to clock if not set the Hours will be four", required=False, default=DEFAULT_HOURS)
 args = vars(parser.parse_args())
 
@@ -47,7 +41,7 @@ USERNAME = args['username']
 #Password Check you can insert your password below in the Password first variable below if loop (UNSAFE)
 if(args['prompt'] == 'y'):
    #remove config
-   PASSWORD = config['User']['Password']
+   PASSWORD = ''
 else:
    PASSWORD =  getpass('Enter Password:')
    
@@ -216,7 +210,7 @@ def Go(x):
  goToCSUClock()
  selectCSU()
  loginCSU()
- #Clockselector(x)
+ Clockselector(x)
 # The script running:
 
 print('\nClocking {0} hours...\n'.format(HOURS_TO_CLOCK))
