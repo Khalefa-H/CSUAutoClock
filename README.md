@@ -20,3 +20,4 @@ options:
 
 This version will not tell you if you got the wrong login if it stops outputting during login this is most likely why
 
+No date and time logging  into a file yet 
