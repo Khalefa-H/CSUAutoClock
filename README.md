@@ -28,3 +28,7 @@ options:
 
 
 No date and time logging  into a file yet 
+
+<h1>Additional Files<h1>
+<li>Set-Login.* : Will create a new Encryption key then allow you to enter A new Login <br/>
+<li>Changepw.* : Will Allow you to Change the password without reseting everything else <br/>
