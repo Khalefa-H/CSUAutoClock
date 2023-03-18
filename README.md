@@ -29,6 +29,7 @@ options:
 
 No date and time logging  into a file yet 
 
-<h1>Additional Files<h1/>
-<li>Set-Login.* : Will create a new Encryption key then allow you to enter A new Login <br/>
-<li>Changepw.* : Will Allow you to Change the password without reseting everything else <br/>
+<h1>Additional Files<h1>
+<li>Set-Login.* : Will create a new Encryption key then allow you to enter A new Login 
+<li>Changepw.* : Will Allow you to Change the password without reseting everything else 
+<li>Key.txt : Holds your encryption key (!KEEP THIS FILE SAFE & REPLACE WHEN YOU WANT TO RUN THE PROGRAM!)
