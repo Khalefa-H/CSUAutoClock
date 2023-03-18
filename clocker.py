@@ -36,7 +36,7 @@ DEFAULT_HOURS = 4
 #parsers
   #--arguments
 parser = argparse.ArgumentParser(description='CSUautoclockin')
-parser.add_argument('--Config', help="CSU Username(everything before the @)", action=argparse.BooleanOptionalAction)
+parser.add_argument('--Config', help="Not needed but overrides other arugments in favor of save creds", action=argparse.BooleanOptionalAction)
 parser.add_argument('-u', '--username', help="CSU Username(everything before the @)", required=False,action=argparse.BooleanOptionalAction,default="N/A" )
 parser.add_argument('-p', '--prompt', help="Disable Password prompt for automation (add password directly into the code)  ", required=False,action=argparse.BooleanOptionalAction)
 parser.add_argument('-hrs', '--hours', type=float, help="Hours to clock if not set the Hours will be 4", required=False, default=DEFAULT_HOURS)

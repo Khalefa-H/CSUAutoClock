@@ -16,7 +16,8 @@ CSUautoclockin
 options:
   -h, --help            show this help message and exit<br/>
   --Config, --no-Config<br/>
-                        CSU Username(everything before the @)<br/>
+                        Not needed but overrides other arugments in favor of
+                        save creds<br/>
   -u, --username, --no-username<br/>
                         CSU Username(everything before the @) (default: N/A)<br/>
   -p, --prompt, --no-prompt<br/>
