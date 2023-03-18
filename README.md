@@ -2,7 +2,7 @@
  A Simple Script to Clock OneUSG User to Clock user in and out using pyhton and selium
 It logs in then starts the Duo push for aproval (It tries twice if you it times out) then clocks you in then waits on the Web portal until the end of the shift by refreshing the page for the duration then clocking out at the end 
 <h1>SETUP</h1><br/>
-<p>Windows<p/><br/>
+<h1>Windows<h1/><br/>
 <li>1.Run First-Time-Setup.ps1
 <li>2.Read and go though process
 <li>3.Run with arguments  example "python3 .\clocker.py" or Start-Program.ps1 (ps1 file does no take arguments)
