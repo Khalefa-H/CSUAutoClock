@@ -1,6 +1,7 @@
 # Auto Clockin (NO input Rejection Make sure you enter the right password please)
 #------------------------------------------------------#
 from datetime import date
+from dotenv import load_dotenv
 import datetime
 import configparser
 import sys
@@ -8,7 +9,11 @@ import time
 import os
 import argparse
 from getpass import getpass 
+#encryption
+from cryptography.fernet import Fernet
 
+import re 
+#----------------------------------#
 import logging
 logging.getLogger("urllib3").setLevel(logging.ERROR)
 #Selenium
@@ -26,26 +31,54 @@ from selenium.webdriver.support import expected_conditions as EC
 DEBUG_MODE = False
 #import chromedriver_autoinstaller
 
-
 DEFAULT_HOURS = 4
 
 #parsers
   #--arguments
 parser = argparse.ArgumentParser(description='CSUautoclockin')
-parser.add_argument('-u', '--username', help="CSU Username(everything before the @)", required=False )
-parser.add_argument('-p', '--prompt', help="Disable Password prompt for automation (add password directly into the code)  ", required=False)
+parser.add_argument('--Config', help="CSU Username(everything before the @)", action=argparse.BooleanOptionalAction)
+parser.add_argument('-u', '--username', help="CSU Username(everything before the @)", required=False,action=argparse.BooleanOptionalAction,default="N/A" )
+parser.add_argument('-p', '--prompt', help="Disable Password prompt for automation (add password directly into the code)  ", required=False,action=argparse.BooleanOptionalAction)
 parser.add_argument('-hrs', '--hours', type=float, help="Hours to clock if not set the Hours will be 4", required=False, default=DEFAULT_HOURS)
 args = vars(parser.parse_args())
 
-USERNAME = args['username']
-#Password Check you can insert your password below in the Password first variable below if loop (UNSAFE)
-if(args['prompt'] == 'y'):
-   #remove config
-   PASSWORD = ''
+#-------#
+load_dotenv()
+#Get Creds From file
+try:
+    f=Fernet(open('key.txt',encoding='ascii').read())
+    token0=bytes(os.getenv("Uname"),"ascii")
+    token1=bytes(os.getenv("Pw"),"ascii")
+    username = re.sub(r'^[b]|\'', '', str(f.decrypt(token0)))
+    password= re.sub(r'^[b]|\'', '', str(f.decrypt(token1)))
+except(ValueError,Exception,FileNotFoundError,FileExistsError):
+    print("Token mismatch or key does not exist re-run Set-Login.py")
+    exit()
+
+#End#
+
+#Set-Username Based off args
+ #Username Flag
+Use_config_username = args['username']=="N/A"
+
+if((Use_config_username)):
+  USERNAME=username
 else:
-   PASSWORD =  getpass('Enter Password:')
+  USERNAME=args['username']
+
+#Set-Password
+ #Flag for prompt
+Use_config_prompt = args['prompt']
+ #use Password from setup
+
+if(Use_config_prompt):
+  PASSWORD=getpass()
+else: 
+  PASSWORD = password
+print(USERNAME)
+print(PASSWORD)
+
    
-#getpass.getpass(prompt='CSU Password: ', stream=None)
 HOURS_TO_CLOCK = args['hours']
 #Headless-MODE
 chrome_options = Options()
@@ -121,11 +154,11 @@ def loginCSU():
     try:
      CSU_login_username.send_keys(USERNAME+"@student.clayton.edu")
     except(TypeError):
-      print("Invaild Username input")
+      print("Invaild  input")
     try:
       CSU_login_password.send_keys(PASSWORD)
     except(TypeError):
-      print("Invaild Pasword input")
+      print("Invaild  input")
    
 
     submit_button = DRIVER.find_element(By.ID,"submitButton")
