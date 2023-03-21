@@ -1,1 +1,1 @@
-winget install python; pip install -r requirements.txt; python setup.py
+winget install python; pip install -r requirements.txt; python Set-Login
