@@ -5,7 +5,7 @@ It logs in then starts the Duo push for aproval (It tries twice if you it times 
 
 <li>1.Run First-Time-Setup.ps1
 <li>2.Read and go though process
-<li>3.Run with arguments  example "python3 .\clocker.py" or Start-Program.ps1 (ps1 file does no take arguments)
+<li>3.Run with arguments  example "python3 .\clocker.py" or Start-Program.ps1 (DO NOT USE Powershell scripts unless you know what you're doing )
 
 usage: clocker.py [-h] [--Config | --no-Config]
                   [-u | --username | --no-username]

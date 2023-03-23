@@ -76,7 +76,8 @@ if(Use_config_prompt):
 else: 
   PASSWORD = password
 print(USERNAME)
-print(PASSWORD)
+if(DEBUG_MODE):
+ print(PASSWORD)
 
    
 HOURS_TO_CLOCK = args['hours']
