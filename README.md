@@ -4,8 +4,8 @@ It logs in then starts the Duo push for aproval (It tries twice if you it times 
 <h1>SETUP Windows</h1><br/>
 
 <li>1. install Python "winget install python" or get python3 from the MSstore
-<li>2. Use python pip to install requirements "pip install -r requirements.txt "
-<li>3.Run with arguments  example "python3 .\clocker.py" or Run the GUI with "python.exe .\gui.py"
+<li>2. Use python pip to install requirements "pip install -r "Wherever you put the application"\requirements.txt "
+<li>3.Run gui.exe or Run the GUI with "python.exe .\Data\Scripts\clocker.py"
 
 usage: clocker.py [-h] [--Config | --no-Config]
                   [-u | --username | --no-username]
