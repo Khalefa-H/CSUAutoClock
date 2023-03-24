@@ -9,8 +9,8 @@ load_dotenv()
 f=Fernet(open('key.txt',encoding='ascii').read())
 
 Username= os.getenv("Uname")
-print(Username)
-Password=bytes(getpass(prompt='Enter Swan password \n'),"ascii")
+
+Password=bytes(getpass(prompt='Enter New Swan password \n'),"ascii")
 
 file0=open(".\\.env","wb")
 #file0.write(b'#Creds \n')

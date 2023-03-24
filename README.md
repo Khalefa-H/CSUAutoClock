@@ -1,11 +1,11 @@
 # CSUAutoClock
  A Simple Script to Clock OneUSG User to Clock user in and out using pyhton and selium
-It logs in then starts the Duo push for aproval (It tries twice if you it times out) then clocks you in then waits on the Web portal until the end of the shift by refreshing the page for the duration then clocking out at the end 
+It logs in then starts the Duo push for aproval (It tries twice if you it times out) then clocks you in then waits on the Web portal until the end of the shift by refreshing the page for the duration then clocking out at the end . It Stores the Users Login and Password using encrpytion with a key in a text file that user must keep track of
 <h1>SETUP Windows</h1><br/>
 
-<li>1.Run First-Time-Setup.ps1
-<li>2.Read and go though process
-<li>3.Run with arguments  example "python3 .\clocker.py" or Start-Program.ps1 (DO NOT USE Powershell scripts unless you know what you're doing )
+<li>1. install Python "winget install python" or get python3 from the MSstore
+<li>2. Use python pip to install requirements "pip install -r requirements.txt "
+<li>3.Run with arguments  example "python3 .\clocker.py" or Run the GUI with "python.exe .\gui.py"
 
 usage: clocker.py [-h] [--Config | --no-Config]
                   [-u | --username | --no-username]
