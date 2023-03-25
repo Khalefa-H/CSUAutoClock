@@ -3,8 +3,8 @@
 It logs in then starts the Duo push for aproval (It tries twice if you it times out) then clocks you in then waits on the Web portal until the end of the shift by refreshing the page for the duration then clocking out at the end . It Stores the Users Login and Password using encrpytion with a key in a text file that user must keep track of
 <h1>SETUP Windows</h1><br/>
 
-<li>1. install Python "winget install python" or get python3 from the MSstore
-<li>2. Use python pip to install requirements "pip install -r "Wherever you put the application"\requirements.txt "
+<li>1. install Python "winget install python" or get python3 from the MSstore & unzip Files onto PC (Windows Defender and Chrome will flag the exe  so Download the <a href="https://github.com/Khalefa-H/CSUAutoClock/tree/exeless-ver">exeless ver<a/> if you don't want to make changes to your antivirus )
+ <li>2. Use python pip to install requirements "pip install -r "Wherever you put the application"\requirements.txt "
 <li>3.Run gui.exe or Run the GUI with "python.exe .\Data\Scripts\clocker.py" NOTE: Run Setup login First (You can leave password empty if you plan to use the prompted version)
 
 usage: clocker.py [-h] [--Config | --no-Config]
